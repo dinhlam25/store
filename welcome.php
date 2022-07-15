@@ -130,10 +130,6 @@
             <a href="#" class="btn btn-primary">See Profile</a>
         </div>
     </div>
-<<<<<<< HEAD
     <h2>test conflict</h2>
-=======
-   <h1>Test PULL </h1>
->>>>>>> 5ed240166d3b056f52f1235e360a354029fd9dd1
 </body>
 </html>

@@ -27,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>TEST bootstrap</title>
 </head>
-<body>
+<body class="container">
     <!-- breadcumb -->
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">HTML</a></li>
@@ -40,6 +40,27 @@
         <li class="breadcrumb-item"><a href="#">API</a></li>
         <li class="breadcrumb-item"><a href="#">DOCKER</a></li>
     </ul>
+    <!-- nav , nav tabs-->
+    <ul class="nav flex-column nav-tabs mb-5">
+        <li class="nav-item"><a class="nav-link" href="#">HTML</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">CSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">PHP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">JS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">API</a></li>
+    </ul> 
+    <!-- navbar -->
+    <div class="navbar navbar-expand bg-dark mb-5">
+    <ul class="navbar-nav ">
+        <li class="nav-item"><a class="nav-link" href="#">HTML</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">CSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">PHP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">JS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">API</a></li>
+    </ul>
+    </div>
+
+
+    </nav>
     <!-- table -->
     <div class='container'>
         <div class="" style="width: 500px">
@@ -130,6 +151,102 @@
             <a href="#" class="btn btn-primary">See Profile</a>
         </div>
     </div>
-    <h2>test conflict</h2>
-</body>
-</html>
+    <!--  btn group, dropdown -->
+    <div class="btn-group-vertical">
+        <button class="btn btn-primary">HTML</button>
+        <button class="btn btn-primary">javascript</button>
+        <div class="btn-group dropright">
+        <button type="button" class="btn btn-primary" data-toggle="dropdown">Button dropdown</button> 
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button> 
+            <div class="dropdown-menu">
+                <div class="dropdown-header">this is header of dropdown</div>
+                <a class="dropdown-item" href="#">Text1</a>
+                <a class="dropdown-item" href="#">Text2</a>
+                <a class="dropdown-item" href="#">Text3</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Link 1</a>
+                <a class="dropdown-item" href="#">Link 2</a>
+            </div>
+        </div>
+        <!-- collapse -->
+        <button class="btn btn-primary" data-target="#my-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse">click me!</button>
+        <div class="collapse" id="my-collapse">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>                                                                      
+
+        <!-- colapse advance -->
+        <div class="container">
+        <h2>Accordion Example</h2>
+
+        <div id="accordion">
+            <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                Collapsible Group Item #1
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+            </div>
+            <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                Collapsible Group Item #2
+            </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+            </div>
+            <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                Collapsible Group Item #3
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <?php
+        include_once "connect.php";
+        $query = "SELECT * FROM news";
+        $result = mysqli_query($conn,$query);
+        while($row = mysqli_fetch_array($result,1)){
+                echo '
+                <div class="row">
+                        <div class="col-md-4">
+                            <img src="'.$row['thumbnail'].'" alt="" style="width: 100%"> 
+                        </div>
+                        <div class="col-md-8">
+                            <h1>'.$row['title'].'</h1>
+                            <p>'.$row['description'].'</p>
+                            <p>'.$row['create_at'].'</p>
+                        </div>
+                 </div>
+                <hr>
+                ';
+        }
+    ?>
+
+<footer>
+    <div class="mt-5 mb-5">a</div>
+</footer>

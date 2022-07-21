@@ -18,7 +18,7 @@ function execute($query)
   mysqli_query($conn,$query);
   $conn->close();
 }
-function executeResult($query,)
+function executeResult($query)
 {
   $conn = new mysqli('localhost','root','','info');
   mysqli_set_charset($conn,"utf8");
